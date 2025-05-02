@@ -1,0 +1,70 @@
+# .bashrc
+YELLOW='\[\033[0;33m\]'
+RED='\[\033[0;31m\]'
+RESET='\[\033[0m\]'
+
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+if [ -d ~/.bashrc.d ]; then
+  for rc in ~/.bashrc.d/*; do
+    if [ -f "$rc" ]; then
+      . "$rc"
+    fi
+  done
+fi
+unset rc
+
+if [ -n "$tmux" ]; then
+  PS1="[${YELLOW}\t${RESET}][${RED}\w${RESET}]\n[tmux]\n\$ "
+else
+  PS1="[${YELLOW}\t${RESET}][${RED}\w${RESET}]\n\$ "
+fi
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if command -v tmux &>/dev/null && [ -z "$TMUX" ]; then
+  tmux
+fi
+
+#FUN STUFF
+alias discordo='cd ~/discordo && ./discordo'
+alias angband2='/usr/local/games/angband -mgcu -- -n6'
+alias pm='SDL_VIDEODRIVER=x11 powermanga'
+
+#PLUGG
+alias mt='cd ~/Downloads && ./Milkytracker-x86_64.AppImage'
+alias money='cd ~/projects/get-that-money/src/main/java/org/lofijeff/ && nvim'
+alias xx='cd ~/PLUGG/Ex-jobb/ && nvim kladd.txt'
+
+#UTILS
+alias wifils='nmcli device wifi list'
+alias wifilogin='nmcli device wifi connect'
+alias pie='ssh lofijeff@terrornastet.local'
+
+#TMUX / TERMINAL
+alias what='dnf info'
+alias du='sudo dnf update'
+alias di='sudo dnf install'
+alias ds='sudo dnf search'
+alias da='sudo dnf autoremove'
+alias na='nvim ~/.config/alacritty/alacritty.toml'
+alias nt='nvim ~/.tmux.conf'
+alias rlt='tmux source-file ~/.tmux.conf'
+alias kill='tmux kill-session'
+alias ff='fastfetch'
+alias nb='nvim ~/.bashrc'
+alias rlb='source ~/.bashrc'
+alias cc='clear'
+
+#HYPRLAND
+alias nh='nvim ~/.config/hypr/hyprland.conf'
+alias pek='hyprctl setcursor WinSur-dark-cursors 24'
+alias wb='cd ~/.config/waybar/'
+alias loggy='hyprctl dispatch exit'
