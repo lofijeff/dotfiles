@@ -1,0 +1,178 @@
+wtf:
+  colors:
+    background: black
+    border:
+      focusable: orange
+      focused: orange
+      normal: gray
+    highlight:
+      fore: orange
+      back: black
+    text: white
+    title: white
+  grid:
+    columns: [33, 32, 32, 35]
+    rows: [15, 10, 8]
+  refreshInterval: 1
+  mods:
+
+    spotify:
+      enabled: false
+      colors:
+        label: "green"
+        text: "white"
+      position:
+        top: 2
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 0
+      title: "\uf1bc"
+
+#    digitalclock:
+#      color: orange
+#      enabled: true
+#      font: digitalfont
+#      hourFormat: 24
+#      withDatePrefix: False
+#      dateFormat: "Monday Jan 02 2006"
+#      position:
+#        top: 0
+#        left: 0
+#        height: 1
+#        width: 1
+#      refreshInterval: 1s
+#      title: "Clock"
+#      type: "digitalclock"
+
+    feedreader:
+      enabled: true
+      feeds:
+      - https://www.svt.se/nyheter/lokalt/vasterbotten/rss.xml
+      feedLimit: 6
+      position:
+        top: 2
+        left: 0
+        width: 4
+        height: 1
+      refreshInterval: 3600
+      title: "\ueeeb"
+
+#    ipinfo:
+#      colors:
+#        name: "lightblue"
+#        value: "white"
+#      enabled: true
+#      position:
+#        top: 0
+#        left: 1
+#        height: 1
+#        width: 1
+#      refreshInterval: 150
+
+#    power:
+#      enabled: true
+#      position:
+#        top: 1
+#        left: 0
+#        height: 1
+#        width: 1
+#      refreshInterval: 15
+#      title: "⚡️"
+
+ #   textfile:
+#      enabled: true
+#      filePath: "~/PLUGG/Ex-jobb/kladd.txt"
+#      format: true
+#      position:
+#        top: 0
+#        left: 0
+#        height: 4
+#        width: 2
+#      refreshInterval: 30
+#      wrapText: false
+        
+    todo:
+      checkedIcon: "\uf00c"
+      colors:
+        checked: gray
+      enabled: true
+      filename: "todo.yml"
+      position:
+        top: 0
+        left: 1
+        height: 2
+        width: 2
+      refreshInterval: 1h
+      title: "\uf0ae"
+  
+    prettyweather:
+      enabled: true
+      city: "Umeå"
+      position:
+          top: 1
+          left: 0
+          height: 1
+          width: 1
+      refreshInterval: 5m
+      unit: "m"
+      view: 0
+      language: "sv"
+      title: "\ue33d"
+    
+    cmdrunner_system:
+      cmd: "/bin/bash"
+      args: ["-c", "~/scripts/test.sh"]
+      enabled: true
+      focusable: false
+      position:
+        top: 0
+        left: 0
+        height: 1
+        width: 1
+      refreshInterval: 5s
+      title: "\ueea7"
+      type: cmdrunner
+
+    textfile:
+      enabled: true
+      filePaths:
+      - "~/.config/wtf/notes.txt"
+      format: true
+      position:
+        top: 0
+        left: 3
+        height: 2
+        width: 1
+      refreshIntervals: 60s
+      wrapText: true
+      title: "󰙏"
+        
+
+    bajs_cmdrunner:
+      cmd: "/bin/bash"
+      args: ["-c", "cd ~/.config && ls"]
+      enabled: false
+      focusable: false
+      position:
+        top: 0
+        left: 3
+        height: 2
+        width: 1
+      title: "~/.config"
+      type: cmdrunner
+
+
+
+    kiss_cmdrunner:
+      cmd: "/bin/bash"
+      args: ["-c", "nvim"]
+      enabled: false
+      focusable: true
+      position:
+        top: 0
+        left: 3
+        height: 2
+        width: 1
+      title: "testttt"
+      type: cmdrunner
