@@ -2,6 +2,7 @@
 YELLOW='\[\033[0;33m\]'
 RED='\[\033[0;31m\]'
 RESET='\[\033[0m\]'
+GRAY='\[\033[0;90m\]'
 
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
@@ -22,9 +23,9 @@ fi
 unset rc
 
 if [ -n "$tmux" ]; then
-  PS1="[${YELLOW}\t${RESET}][${RED}\w${RESET}]\n[tmux]\n\$ "
+  PS1="[${YELLOW}\h${RESET}][${RED}\w${RESET}]\n[tmux]\n\$ "
 else
-  PS1="[${YELLOW}\t${RESET}][${RED}\w${RESET}]\n\$ "
+  PS1="[${YELLOW}\t${RESET}][${RED}\w${RESET}]\n$GRAY\#$RESET\$ "
 fi
 
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -35,11 +36,12 @@ fi
 
 #FUN STUFF
 alias discordo='cd ~/discordo && ./discordo'
-alias angband2='/usr/local/games/angband -mgcu -- -n6'
+alias angband2='angband -mgcu -- -n6'
 alias pm='SDL_VIDEODRIVER=x11 powermanga'
+alias bon='cbonsai -l -t 0.7 -i'
+alias dash='cd ~/go/bin/ && ./dashbrew -c ~/dashboard.json'
 
 #PLUGG
-alias mt='cd ~/Downloads && ./Milkytracker-x86_64.AppImage'
 alias money='cd ~/projects/get-that-money/src/main/java/org/lofijeff/ && nvim'
 alias xx='cd ~/PLUGG/Ex-jobb/ && nvim kladd.txt'
 
@@ -47,6 +49,7 @@ alias xx='cd ~/PLUGG/Ex-jobb/ && nvim kladd.txt'
 alias wifils='nmcli device wifi list'
 alias wifilogin='nmcli device wifi connect'
 alias pie='ssh lofijeff@terrornastet.local'
+alias nl='sudo nvim /etc/lynx.cfg'
 
 #TMUX / TERMINAL
 alias what='dnf info'
@@ -57,8 +60,9 @@ alias da='sudo dnf autoremove'
 alias na='nvim ~/.config/alacritty/alacritty.toml'
 alias nt='nvim ~/.tmux.conf'
 alias rlt='tmux source-file ~/.tmux.conf'
+alias nwtf='nvim ~/.config/wtf/config.yml'
 alias kill='tmux kill-session'
-alias ff='fastfetch'
+alias ff='fastfetch -l Bonsai'
 alias nb='nvim ~/.bashrc'
 alias rlb='source ~/.bashrc'
 alias cc='clear'
@@ -67,4 +71,7 @@ alias cc='clear'
 alias nh='nvim ~/.config/hypr/hyprland.conf'
 alias pek='hyprctl setcursor WinSur-dark-cursors 24'
 alias wb='cd ~/.config/waybar/'
-alias loggy='hyprctl dispatch exit'
+alias nw='nvim ~/.config/wofi/style.css'
+
+#WTF
+alias nn='nvim ~/.config/wtf/notes.txt'
